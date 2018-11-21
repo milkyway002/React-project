@@ -1,0 +1,23 @@
+.text-box {
+    display: flex;
+    cursor: pointer;
+    transition: all 0.15s;
+    border-bottom: solid 1px #FED4D4;
+    font-size: 12pt;
+    font-family: "나눔고딕";
+    color: #505050;
+}
+
+.text-box:hover{
+    background-color: #FDE7E7;
+}
+
+.text-box:hover .remove-button {
+    background-color: #FDE7E7;
+    opacity: 1;
+}
+
+.remove-button {
+    color: #FE3030;
+    opacity: 0;
+}
