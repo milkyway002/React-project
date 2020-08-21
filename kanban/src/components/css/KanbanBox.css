@@ -1,0 +1,21 @@
+.kanbanBox-background {
+    width: 13%;
+}
+
+.kanban-title {
+    text-align: center;
+    line-height: 50px;
+    background: #ffe7ce;
+
+    width: 85%;
+    height: 50px;
+
+    border-radius: 15px;
+    overflow: auto;
+}
+
+.delete-btn {
+    float: right;
+    padding-right: 10px;
+    cursor: pointer;
+}

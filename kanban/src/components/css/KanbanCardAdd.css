@@ -1,0 +1,30 @@
+.kanbanCardAdd-context {
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+
+    background: rgba(255, 231, 206, 0.5);
+
+    width: 85%;
+    height: 50px;
+
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.kanbanCardAdd-input {
+    border-radius: 5px;
+}
+
+.kanbanCardAdd-btn {
+    border: none;
+    background: none;  
+    color: #4a4a4a;
+    font-size: 1rem;
+}
+
+
+.kanbanCardAdd-btn:hover {
+    color: #5bfffc;    
+}

@@ -1,0 +1,14 @@
+.KanbanBoxAdd-title {
+    margin-top: 10px;
+
+    text-align: center;
+    line-height: 50px;
+    background: #efefef;
+
+    width: 85%;
+    height: 50px;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+.KanbanCard-background {
+    margin-top: 10px;
+    background: #ffe7ce;
+
+    width: 85%;
+    height: 50px;
+
+    border-radius: 15px;
+}
+
+.KanbanCard-context {
+    text-align: center;
+    line-height: 50px;
+    overflow: auto;
+}
+
+.KanbanCard-del-btn {
+    float: right;
+    padding-right: 10px;
+    cursor: pointer;
+}

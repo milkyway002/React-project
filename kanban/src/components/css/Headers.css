@@ -1,0 +1,17 @@
+.Headers-background {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+
+    width: 100%;
+    height: 3rem;
+    margin-top: 1.5rem;
+
+    font-size: 15pt;
+    
+    background: #ffa533;
+    border-radius: 15px;
+}

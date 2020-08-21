@@ -1,0 +1,29 @@
+.AddList-background {
+    width: 13%;
+    overflow: auto;
+}
+
+.addList-title {
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+
+    background: rgba(255, 231, 206, 0.5);
+
+    width: 85%;
+    height: 50px;
+
+    border-radius: 15px;
+}
+
+.addList-btn {
+    border: none;
+    background: none;  
+    color: #4a4a4a;
+    font-size: 1rem;
+}
+
+.addList-btn:hover {
+    color: #5bfffc;    
+}

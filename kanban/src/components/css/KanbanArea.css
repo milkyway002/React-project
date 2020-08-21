@@ -1,0 +1,6 @@
+.kanbanArea-background {
+    display: flex;
+    justify-content: left;
+    
+    margin-top: 50px;
+}
