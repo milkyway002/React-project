@@ -44,6 +44,7 @@ export type KanbanCardProps = {
     Kanban: Kanban;
     onDeleteCard: (id: number) => void;
     onSetDragId: React.Dispatch<SetStateAction<number>>;
+    onChangeDragId: (id: number) => void;
     dragId: number;
 };
 

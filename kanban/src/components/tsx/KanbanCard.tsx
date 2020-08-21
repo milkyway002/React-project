@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../css/KanbanCard.css';
 
 import { KanbanCardProps, ItemTypes } from '../../module/type';
@@ -8,8 +8,10 @@ const KanbanCard = ({
     Kanban,
     onDeleteCard,
     onSetDragId,
+    onChangeDragId,
     dragId
 }: KanbanCardProps) => {
+    const cnt = useRef(0);
     
     const [{isDragging}, drag] = useDrag({
         item: {type: ItemTypes.KanbanCard},
@@ -22,7 +24,15 @@ const KanbanCard = ({
         onDeleteCard(Kanban.id);
     };
 
-    if (isDragging) onSetDragId(Kanban.id);
+    if (isDragging) {
+        cnt.current++;
+        console.log(cnt.current);
+        if (cnt.current < 2) {
+            onChangeDragId(Kanban.id);
+        }
+    } else {
+        cnt.current = 0;
+    }
 
     return (
         <div className="KanbanCard-background" ref={drag} style={{opacity: isDragging ? 0.5 : 1}}>

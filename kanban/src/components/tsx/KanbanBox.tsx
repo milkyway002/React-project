@@ -32,6 +32,10 @@ const KanbanBox = ({
         onDeleteList(List.id);
     };
 
+    const onChangeDragId = (id: number) => {
+        setDragId(id);
+    };
+
     return (
         <div className="kanbanBox-background" ref={drop} style={{background: (isOver ? '#efefef' : 'none')}}>
             <div className="kanban-title">
@@ -45,6 +49,7 @@ const KanbanBox = ({
                                                     Kanban={Kanbans}
                                                     onDeleteCard={onDeleteCard}
                                                     onSetDragId={setDragId}
+                                                    onChangeDragId={onChangeDragId}
                                                     dragId={dragId}
                                                     key={Kanbans.id}
                                                     ></KanbanCard> : null))}
