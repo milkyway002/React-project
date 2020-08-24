@@ -5,7 +5,7 @@ import { KanbanCardAddProps } from '../../module/type';
 
 const KanbanCardAdd = ({
     List,
-    setAddCard,
+    setCardClick,
     onAddCard
 }: KanbanCardAddProps) => {
     const [value, setValue] = useState('');
@@ -16,8 +16,8 @@ const KanbanCardAdd = ({
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setAddCard(false);
-        onAddCard(value, List.name);
+        setCardClick(false);
+        onAddCard(value, List.id);
         setValue('');
     };
 

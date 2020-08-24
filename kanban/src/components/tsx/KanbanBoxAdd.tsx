@@ -4,11 +4,11 @@ import { KanbanBoxAddProps } from '../../module/type';
 
 
 const KanbanBoxAdd = ({
-    setAddCard
+    setCardClick
 }: KanbanBoxAddProps) => {
 
     const onBtnClick = () => {
-        setAddCard(true);
+        setCardClick(true);
     }
 
     return (

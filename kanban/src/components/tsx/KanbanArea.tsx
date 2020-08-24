@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import AddList from './AddList';
 import PlusList from './PlusList';
@@ -12,33 +12,28 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 
 const KanbanArea = ({
     List,
-    Kanban,
+    State,
     onDeleteList,
     onAddList,
-    onAddCard,
-    onDeleteCard,
+    onListClick,
     onChangeCard
 }: KanbanAreaProps) => {
-    const [isClick, setIsClick] = useState(false);
-
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="kanbanArea-background">
                 {List.map((Lists) => (
                     <KanbanBox
                         List={Lists}
-                        Kanban={Kanban}
+                        State={State}
                         onDeleteList={onDeleteList}
-                        onAddCard={onAddCard}
-                        onDeleteCard={onDeleteCard}
                         onChangeCard={onChangeCard}
                         key={Lists.id}
                     ></KanbanBox>
                 ))}
-                {isClick ? (<PlusList 
-                                onBtnClick={setIsClick}
+                {State.listState ? (<PlusList 
+                                onListClick={onListClick}
                                 onAddList={onAddList}
-                            ></PlusList>) : (<AddList onBtnClick={setIsClick}></AddList>)}
+                            ></PlusList>) : (<AddList onListClick={onListClick}></AddList>)}
             </div>
         </DndProvider>
     );

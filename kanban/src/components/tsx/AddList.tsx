@@ -4,12 +4,12 @@ import '../css/AddList.css';
 import {AddListProps} from '../../module/type';
 
 const AddList = ({
-    onBtnClick
+    onListClick
 }: AddListProps) => {
 
     const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onBtnClick(true);
+        onListClick();
     }
 
     return (

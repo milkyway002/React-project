@@ -7,9 +7,7 @@ import { useDrag } from 'react-dnd';
 const KanbanCard = ({
     Kanban,
     onDeleteCard,
-    onSetDragId,
-    onChangeDragId,
-    dragId
+    onChangeId,
 }: KanbanCardProps) => {
     const cnt = useRef(0);
     
@@ -28,7 +26,7 @@ const KanbanCard = ({
         cnt.current++;
         if (cnt.current < 2) {
             console.log('Change!');
-            onChangeDragId(Kanban.id);
+            onChangeId(Kanban.id);
         }
     } else {
         cnt.current = 0;

@@ -4,7 +4,7 @@ const CHANGE_GROUP = 'kanban/CHANGE_GROUP' as const;
 
 let num: number = 1;
 
-export const add_card = (text: string, group: string) => ({
+export const add_card = (text: string, group: number) => ({
     type: ADD_CARD,
     payload: {
         text: text,
@@ -17,7 +17,7 @@ export const delete_card = (id: number) => ({
     payload: id
 });
 
-export const change_group = (id: number, group: string) => ({
+export const change_group = (id: number, group: number) => ({
     type: CHANGE_GROUP,
     payload: {
         id: id,
@@ -33,7 +33,7 @@ type KanbanAction =
 export type Kanban = {
     id: number;
     text: string;
-    group: string;
+    group: number;
 };
 
 type KanbanState = Kanban[];

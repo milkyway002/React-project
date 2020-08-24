@@ -4,14 +4,14 @@ import '../css/PlusList.css';
 import { PlusListProps } from '../../module/type';
 
 const PlusList = ({
-    onBtnClick,
+    onListClick,
     onAddList
 }: PlusListProps) => {
     const [value, setValue] = useState('');
 
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onBtnClick(false);
+        onListClick();
         onAddList(value);
         setValue('');
     }

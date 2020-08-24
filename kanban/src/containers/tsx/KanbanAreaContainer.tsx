@@ -4,13 +4,14 @@ import KanbanArea from '../../components/tsx/KanbanArea';
 
 import { RootState } from '../../module';
 import { add_list, delete_list } from '../../module/List';
-import {add_card, delete_card, change_group} from '../../module/kanban';
+import { set_list_state } from '../../module/StateControl';
+import {change_group} from '../../module/kanban';
 
 import { useSelector, useDispatch } from 'react-redux';
 
 const KanbanAreaContainer = () => {
     const List = useSelector((state: RootState) => state.List);
-    const Kanban = useSelector((state: RootState) => state.kanban);
+    const State = useSelector((state: RootState) => state.StateControl);
     const dispatch = useDispatch();
 
     const onAddList = (name: string) => {
@@ -21,26 +22,21 @@ const KanbanAreaContainer = () => {
         dispatch(delete_list(id));
     };
 
-    const onAddCard = (text: string, group: string) => {
-        dispatch(add_card(text, group));
-    };
-
-    const onDeleteCard = (id: number) => {
-        dispatch(delete_card(id));
-    };
-
-    const onChangeCard = (id: number, group: string) => {
+    const onChangeCard = (id: number, group: number) => {
         dispatch(change_group(id, group));
+    }
+
+    const onListClick = () => {
+        dispatch(set_list_state());
     }
 
     return (
         <KanbanArea 
             List={List}
-            Kanban={Kanban}
+            State={State}
             onAddList={onAddList}
             onDeleteList={onDeleteList}
-            onAddCard={onAddCard}
-            onDeleteCard={onDeleteCard}
+            onListClick={onListClick}
             onChangeCard={onChangeCard}
         ></KanbanArea>
     );

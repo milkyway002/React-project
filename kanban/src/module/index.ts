@@ -2,10 +2,12 @@ import { combineReducers } from 'redux';
 
 import kanban from './kanban';
 import List from './List';
+import StateControl from './StateControl';
 
 const RootReducer = combineReducers({
     kanban,
-    List
+    List,
+    StateControl
 });
 
 export default RootReducer;

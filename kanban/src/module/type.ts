@@ -1,52 +1,51 @@
 import { List } from './List'; 
-import { SetStateAction } from 'react';
 import { Kanban } from './kanban';
+import { state } from './StateControl';
 
 export type KanbanAreaProps = {
     List: List[];
-    Kanban: Kanban[];
+    State: state;
     onDeleteList: (id: number) => void;
     onAddList: (name: string) => void;
-    onAddCard: (text: string, group: string) => void;
-    onDeleteCard: (id: number) => void;
-    onChangeCard: (id: number, group: string) => void;
+    onListClick: () => void;
+    onChangeCard: (id: number, group: number) => void;
 };
 
 export type KanbanBoxProps = {
     List: List;
-    Kanban: Kanban[];
+    State: state;
     onDeleteList: (id: number) => void;
-    onAddCard: (text: string, group: string) => void;
-    onDeleteCard: (id: number) => void;
-    onChangeCard: (id: number, group: string) => void;
+    onChangeCard: (id: number, group: number) => void;
 };
 
 export type AddListProps = {
-    onBtnClick: React.Dispatch<SetStateAction<boolean>>;
+    onListClick: () => void;
 };
 
 export type PlusListProps = {
-    onBtnClick: React.Dispatch<SetStateAction<boolean>>;
+    onListClick: () => void;
     onAddList: (name: string) => void;
 };
 
 export type KanbanBoxAddProps = {
-    setAddCard: React.Dispatch<SetStateAction<boolean>>;
+    setCardClick: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type KanbanCardAddProps = {
     List: List;
-    setAddCard: React.Dispatch<SetStateAction<boolean>>;
-    onAddCard: (text: string, group: string) => void;
+    setCardClick: React.Dispatch<React.SetStateAction<boolean>>;
+    onAddCard: (text: string, group: number) => void;
 };
 
 export type KanbanCardProps = {
     Kanban: Kanban;
     onDeleteCard: (id: number) => void;
-    onSetDragId: React.Dispatch<SetStateAction<number>>;
-    onChangeDragId: (id: number) => void;
-    dragId: number;
+    onChangeId: (id: number) => void;
 };
+
+export type KanbanCardContainerProps = {
+    List: List;
+}
 
 export const ItemTypes = {
     KanbanCard: 'KanbanCard'
