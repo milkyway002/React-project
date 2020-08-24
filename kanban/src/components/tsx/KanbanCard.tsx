@@ -26,8 +26,8 @@ const KanbanCard = ({
 
     if (isDragging) {
         cnt.current++;
-        console.log(cnt.current);
         if (cnt.current < 2) {
+            console.log('Change!');
             onChangeDragId(Kanban.id);
         }
     } else {

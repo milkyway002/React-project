@@ -6,12 +6,12 @@
     height: 50px;
 
     border-radius: 15px;
+    overflow: auto;
 }
 
 .KanbanCard-context {
     text-align: center;
     line-height: 50px;
-    overflow: auto;
 }
 
 .KanbanCard-del-btn {
