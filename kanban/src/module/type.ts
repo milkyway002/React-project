@@ -17,6 +17,7 @@ export type KanbanBoxProps = {
     State: state;
     onDeleteList: (id: number) => void;
     onChangeCard: (id: number, group: number) => void;
+    onEditList: (id: number, name: string) => void;
 };
 
 export type AddListProps = {

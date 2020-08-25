@@ -28,6 +28,7 @@ const KanbanArea = ({
                         State={State}
                         onDeleteList={onDeleteList}
                         onChangeCard={onChangeCard}
+                        onEditList={onEditList}
                         key={Lists.id}
                     ></KanbanBox>
                 ))}
