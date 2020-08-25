@@ -16,7 +16,8 @@ const KanbanArea = ({
     onDeleteList,
     onAddList,
     onListClick,
-    onChangeCard
+    onChangeCard,
+    onEditList
 }: KanbanAreaProps) => {
     return (
         <DndProvider backend={HTML5Backend}>

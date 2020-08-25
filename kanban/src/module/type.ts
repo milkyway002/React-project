@@ -9,6 +9,7 @@ export type KanbanAreaProps = {
     onAddList: (name: string) => void;
     onListClick: () => void;
     onChangeCard: (id: number, group: number) => void;
+    onEditList: (id: number, name: string) => void;
 };
 
 export type KanbanBoxProps = {
@@ -41,6 +42,7 @@ export type KanbanCardProps = {
     Kanban: Kanban;
     onDeleteCard: (id: number) => void;
     onChangeId: (id: number) => void;
+    onEditCard: (id: number, text: string) => void;
 };
 
 export type KanbanCardContainerProps = {

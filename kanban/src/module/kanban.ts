@@ -1,5 +1,6 @@
 const ADD_CARD = 'kanban/ADD_CARD' as const;
 const DELETE_CARD = 'kanban/DELETE_CARD' as const;
+const EDIT_CARD = 'kanban/EDIT_CARD' as const;
 const CHANGE_GROUP = 'kanban/CHANGE_GROUP' as const;
 
 let num: number = 1;
@@ -17,6 +18,14 @@ export const delete_card = (id: number) => ({
     payload: id
 });
 
+export const edit_card = (id: number, text: string) => ({
+    type: EDIT_CARD,
+    payload: {
+        id: id,
+        text: text
+    }
+});
+
 export const change_group = (id: number, group: number) => ({
     type: CHANGE_GROUP,
     payload: {
@@ -24,10 +33,11 @@ export const change_group = (id: number, group: number) => ({
         group: group
     }
 });
-
+ 
 type KanbanAction = 
     | ReturnType<typeof add_card>
     | ReturnType<typeof delete_card>
+    | ReturnType<typeof edit_card>
     | ReturnType<typeof change_group>;
 
 export type Kanban = {
@@ -51,6 +61,10 @@ const kanban = (state: KanbanState = initalKanbanState, action: KanbanAction) =>
         
         case DELETE_CARD:
             return state.filter(kanban => kanban.id !== action.payload);
+
+        case EDIT_CARD:
+            return state.map(state =>
+                state.id === action.payload.id ? {...state, text: action.payload.text} : state);
 
         case CHANGE_GROUP:
             return state.map(state =>

@@ -8,6 +8,7 @@ const KanbanCard = ({
     Kanban,
     onDeleteCard,
     onChangeId,
+    onEditCard
 }: KanbanCardProps) => {
     const cnt = useRef(0);
     

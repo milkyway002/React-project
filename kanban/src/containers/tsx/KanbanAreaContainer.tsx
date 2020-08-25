@@ -3,7 +3,7 @@ import React from 'react';
 import KanbanArea from '../../components/tsx/KanbanArea';
 
 import { RootState } from '../../module';
-import { add_list, delete_list } from '../../module/List';
+import { add_list, delete_list, edit_list } from '../../module/List';
 import { set_list_state } from '../../module/StateControl';
 import {change_group} from '../../module/kanban';
 
@@ -28,7 +28,11 @@ const KanbanAreaContainer = () => {
 
     const onListClick = () => {
         dispatch(set_list_state());
-    }
+    };
+
+    const onEditList = (id: number, name: string) => {
+        dispatch(edit_list(id, name));
+    };
 
     return (
         <KanbanArea 
@@ -38,6 +42,7 @@ const KanbanAreaContainer = () => {
             onDeleteList={onDeleteList}
             onListClick={onListClick}
             onChangeCard={onChangeCard}
+            onEditList={onEditList}
         ></KanbanArea>
     );
 };

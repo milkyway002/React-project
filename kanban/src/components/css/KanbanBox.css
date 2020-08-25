@@ -3,6 +3,8 @@
 }
 
 .kanban-title {
+    display: flex;
+    justify-content: space-around;
     text-align: center;
     line-height: 50px;
     background: #ffe7ce;
@@ -14,8 +16,16 @@
     overflow: auto;
 }
 
+.kanban-list-context {
+    flex: 1;
+}
+
+.kanban-edit-btn {
+    padding-right: 10px;
+    cursor: pointer;
+}
+
 .delete-btn {
-    float: right;
     padding-right: 10px;
     cursor: pointer;
 }

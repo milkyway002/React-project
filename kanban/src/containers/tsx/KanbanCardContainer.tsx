@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { RootState } from '../../module';
-import {add_card, delete_card } from '../../module/kanban';
+import {add_card, delete_card, edit_card } from '../../module/kanban';
 import { set_card_id } from '../../module/StateControl';
 
 import KanbanCardAdd from '../../components/tsx/KanbanCardAdd';
@@ -10,7 +10,6 @@ import KanbanCard from '../../components/tsx/KanbanCard';
 import KanbanBoxAdd from '../../components/tsx/KanbanBoxAdd';
 
 import { KanbanCardContainerProps } from '../../module/type';
-
 
 const KanbanCardContainer = ({
     List
@@ -31,6 +30,10 @@ const KanbanCardContainer = ({
         dispatch(set_card_id(id));
     };
 
+    const onEditCard = (id:number, text: string) => {
+        dispatch(edit_card(id, text));
+    };
+
     return (
         <>
             <KanbanBoxAdd setCardClick={setCardClick}></KanbanBoxAdd>
@@ -39,13 +42,14 @@ const KanbanCardContainer = ({
                                                 Kanban={Kanbans}
                                                 onDeleteCard={onDeleteCard}
                                                 onChangeId={onChangeId}
+                                                onEditCard={onEditCard}
                                                 key={Kanbans.id}
                                                 ></KanbanCard> : null))}
             {cardClick ? (<KanbanCardAdd  
                                         List={List}
                                         setCardClick={setCardClick}
                                         onAddCard={onAddCard}
-                                ></KanbanCardAdd>) : null}
+                                 ></KanbanCardAdd>) : null}
         </>
     );
 };
